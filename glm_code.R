@@ -1,21 +1,14 @@
-# # Load necessary library
-# library(ggplot2)
-# library(tidyverse)
-# library(dplyr)
-# library(betareg)
-# library(car)
-# library(nnet)
-# library(e1071)
-# library(pscl)
-# # Optional
-# library(corrplot)
-# library(PerformanceAnalytics)
-# library(DHARMa)
-# library(sjPlot)
-# library(lmtest)
+# Load necessary libraries
+library(ggplot2)
+library(tidyverse)
+library(dplyr)
+library(corrplot)
+library(e1071)
+library(pscl)
+library(sjPlot)
 
 # Read the CSV file
-data <- read.csv("glm_data.csv", stringsAsFactors = TRUE)
+data <- read.csv("Data/glm_data.csv", stringsAsFactors = TRUE)
 
 # Re-level the role factor to correspond with my manual entry
 data$Role <- factor(data$Role, levels = c("Supply", "Transit", "Demand"))
