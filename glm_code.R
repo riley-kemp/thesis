@@ -17,14 +17,14 @@ data$Role <- factor(data$Role, levels = c("Supply", "Transit", "Demand"))
 all_country_species <- data %>%
   group_by(Country, Region, GDP_Per_Capita, Gov_Effect, Species_Richness, Control_Corruption, PA_Perc, GDP_PPP, Unemployment, Internet_Use, Rural_Pop, Education_GDP, Rule_of_Law, Trade_Infra, Tourism) %>%
   summarize(
-    supply_count = sum (Role == 'Supply'),
-    transit_count = sum (Role == 'Transit'),
-    demand_count = sum (Role == 'Demand'),
-    supply_label_count = n_distinct(Label[Role == 'Supply']),
-    transit_label_count = n_distinct(Label[Role == 'Transit']),
-    demand_label_count = n_distinct(Label[Role == 'Demand']),
+    supply_count = sum (Role == "Supply"),
+    transit_count = sum (Role == "Transit"),
+    demand_count = sum (Role == "Demand"),
+    supply_label_count = n_distinct(Label[Role == "Supply"]),
+    transit_label_count = n_distinct(Label[Role == "Transit"]),
+    demand_label_count = n_distinct(Label[Role == "Demand"]),
     total_paper_count = n_distinct(Label),
-    .groups = 'drop'
+    .groups = "drop"
   )
 
 # Create ratios for each IWT trade route component
@@ -95,28 +95,28 @@ hist(model_data$SD_Ratio)
 
 # CORR TESTS
 corr_matrix <- cor(model_data[, c(3:13,24)], use = "complete.obs")
-corrplot.mixed(corr_matrix, order = 'AOE')
+corrplot.mixed(corr_matrix, order = "AOE")
 
 # Rule_of_Law shows multicollinearity, removed
 model_data <- subset(model_data, select = -Rule_of_Law)
 
 # Re-check
 corr_matrix <- cor(model_data[, c(3:12,23)], use = "complete.obs")
-corrplot.mixed(corr_matrix, order = 'AOE')
+corrplot.mixed(corr_matrix, order = "AOE")
 
 # Gov_Effect shows multicollinearity, removed
 model_data <- subset(model_data, select = -Gov_Effect)
 
 # Re-check
 corr_matrix <- cor(model_data[, c(3:11,22)], use = "complete.obs")
-corrplot.mixed(corr_matrix, order = 'AOE')
+corrplot.mixed(corr_matrix, order = "AOE")
 
 # GDP_PPP shows multicollinearity, removed
 model_data <- subset(model_data, select = -GDP_PPP)
 
 # Re-check
 corr_matrix <- cor(model_data[, c(3:10,21)], use = "complete.obs")
-corrplot.mixed(corr_matrix, order = 'AOE')
+corrplot.mixed(corr_matrix, order = "AOE")
 
 #####################################
 
@@ -278,7 +278,7 @@ abline(h = 1, col = "red")
 summary(updated_model_SD)
 
 
-# McFadden's pseudo-R-squared (calculate manually)
+# McFadden"s pseudo-R-squared (calculate manually)
 ll_null <- logLik(glm(SD_Ratio ~ 1, data = model_data))  # null model
 ll_full <- logLik(updated_model_SD)  # full model
 pseudo_r2 <- 1 - (as.numeric(ll_full) / as.numeric(ll_null))
