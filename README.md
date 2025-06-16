@@ -1,5 +1,5 @@
 # Thesis Code Repository
-All of the code which was utlized in the final version of my thesis, a link to which can be found [provided soon](https://helda.helsinki.fi/home).
+All of the code which was utlized in the final version of my thesis, a link to which can be found [here](http://hdl.handle.net/10138/597605).
 
 
 The data acquisiton for this thesis was performed separately through a systematic literature review, and as such is not provided here.
