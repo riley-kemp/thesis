@@ -6,3 +6,6 @@ The data acquisiton for this thesis was performed separately through a systemati
 
 
 The code is separated into two files based on the genral function of the code, either as [data processing](Data_Processing.ipynb) or [data visualization](Data_Visualization.ipynb).
+
+
+Full sized images of figures from the results section of the thesis document can be found [here](https://www.doi.org/10.6084/m9.figshare.30037846).
